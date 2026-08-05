@@ -1,16 +1,126 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nick Schulte</title>
-</head>
+---
+layout: default
+title: Home
+---
 
-<body>
+<section class="hero">
 
-<h1>The Schulte Lab</h1>
+  <div class="carousel">
 
-<p>Website under construction.</p>
+    <div class="carousel-slide active">
+      <img
+        src="{{ '/assets/images/slide-1.jpg' | relative_url }}"
+        alt="Research landscape"
+      >
+    </div>
 
-</body>
-</html>
+    <div class="carousel-slide">
+      <img
+        src="{{ '/assets/images/slide-2.jpg' | relative_url }}"
+        alt="Field research"
+      >
+    </div>
+
+    <div class="carousel-slide">
+      <img
+        src="{{ '/assets/images/slide-3.jpg' | relative_url }}"
+        alt="Scientific work"
+      >
+    </div>
+
+    <div class="hero-overlay">
+      <div class="hero-text">
+        <p class="eyebrow">Research and Teaching</p>
+        <h1>Nick Schulte</h1>
+
+        <p class="hero-description">
+          Ecology, environmental DNA, biodiversity, and quantitative science.
+        </p>
+      </div>
+    </div>
+
+    <button
+      class="carousel-button carousel-previous"
+      type="button"
+      aria-label="Previous image"
+    >
+      &#10094;
+    </button>
+
+    <button
+      class="carousel-button carousel-next"
+      type="button"
+      aria-label="Next image"
+    >
+      &#10095;
+    </button>
+
+    <div class="carousel-dots" aria-label="Choose carousel image">
+      <button
+        class="carousel-dot active"
+        type="button"
+        aria-label="Show image 1"
+      ></button>
+
+      <button
+        class="carousel-dot"
+        type="button"
+        aria-label="Show image 2"
+      ></button>
+
+      <button
+        class="carousel-dot"
+        type="button"
+        aria-label="Show image 3"
+      ></button>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="intro-section">
+
+  <div class="section-heading">
+    <p class="eyebrow">Explore</p>
+    <h2>Research, people, and teaching</h2>
+  </div>
+
+  <div class="card-grid">
+
+    <a class="feature-card" href="{{ '/people/' | relative_url }}">
+      <div class="feature-card-content">
+        <p class="card-number">01</p>
+        <h3>People</h3>
+        <p>
+          Learn about current collaborators, students, and research partners.
+        </p>
+      </div>
+    </a>
+
+    <a class="feature-card" href="{{ '/research/' | relative_url }}">
+      <div class="feature-card-content">
+        <p class="card-number">02</p>
+        <h3>Research</h3>
+        <p>
+          Explore current projects in ecology, biodiversity, and environmental
+          DNA.
+        </p>
+      </div>
+    </a>
+
+    <a class="feature-card" href="{{ '/teaching/' | relative_url }}">
+      <div class="feature-card-content">
+        <p class="card-number">03</p>
+        <h3>Teaching</h3>
+        <p>
+          View courses, teaching materials, and educational resources.
+        </p>
+      </div>
+    </a>
+
+  </div>
+
+</section>
+
+<script src="{{ '/assets/js/carousel.js' | relative_url }}"></script>
