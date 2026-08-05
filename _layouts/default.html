@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <title>
+    {% if page.title %}
+      {{ page.title }} | {{ site.title }}
+    {% else %}
+      {{ site.title }}
+    {% endif %}
+  </title>
+
+  <meta
+    name="description"
+    content="{{ page.description | default: site.description }}"
+  >
+
+  <link
+    rel="stylesheet"
+    href="{{ '/assets/css/style.css' | relative_url }}"
+  >
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+
+      <a class="site-name" href="{{ '/' | relative_url }}">
+        Nick Schulte
+      </a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <a
+          href="{{ '/' | relative_url }}"
+          {% if page.url == "/" %}class="active"{% endif %}
+        >
+          Home
+        </a>
+
+        <a
+          href="{{ '/people/' | relative_url }}"
+          {% if page.url contains "/people" %}class="active"{% endif %}
+        >
+          People
+        </a>
+
+        <a
+          href="{{ '/research/' | relative_url }}"
+          {% if page.url contains "/research" %}class="active"{% endif %}
+        >
+          Research
+        </a>
+
+        <a
+          href="{{ '/teaching/' | relative_url }}"
+          {% if page.url contains "/teaching" %}class="active"{% endif %}
+        >
+          Teaching
+        </a>
+      </nav>
+
+    </div>
+  </header>
+
+  <main>
+    {{ content }}
+  </main>
+
+  <footer class="site-footer">
+    <p>
+      © {{ "now" | date: "%Y" }} Nick Schulte
+    </p>
+  </footer>
+
+</body>
+</html>
